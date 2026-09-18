@@ -12,23 +12,23 @@ function setup() {
 
 
 function draw() {
-  clear();                                   
+clear();
 
-  var shift = window.scrollY * 0.15;        
-
-// to make the top left shape disappear when the team photo is there
+  var shift = window.scrollY * 0.15;
+// to make the top shape disappear when the team photo is there 
   if (!hasPhoto) {
-    arcSet(-30, 60 - shift, 620, 10, 0, HALF_PI, sahiYellow, 9, 34);
+    arcSet(-20, 40 - shift, 400, 7, 0, HALF_PI, sahiYellow, 6, 24);
   }
+// to make the different shapes 
+  rays(width - 90, 90 - shift, 45, sahiYellow);
 
-// to make the different shapes on the screen
-  rays(width - 120, 110 - shift, 70, sahiYellow);
-  arcSet(width + 30, height + 10 - shift, 560, 9, PI, PI + HALF_PI, sahiRed, 9, 34);
-  squiggle(5, height - 90 - shift, 300, 20, sahiRed);
-  dotColumn(46, height * 0.42 - shift, 6, 44, sahiRed);
-  dotColumn(width - 46, height * 0.20 - shift, 5, 44, sahiRed);
+  arcSet(width + 20, height + 10 - shift, 360, 7, PI, PI + HALF_PI, sahiRed, 6, 24);
+
+  squiggle(20, height - 70 - shift, 200, 13, sahiRed);
+
+  dotColumn(38, height * 0.44 - shift, 5, 34, sahiRed);
+  dotColumn(width - 38, height * 0.22 - shift, 4, 34, sahiRed);
 }
-
 
 function windowResized() {
   // fit to screen
@@ -54,7 +54,7 @@ function dotColumn(x, y, count, gap, col) {
   fill(col);
 
   for (var i = 0; i < count; i++) {
-    circle(x, y + i * gap, 9);
+    circle(x, y + i * gap, 7);
   }
 }
 
@@ -63,7 +63,7 @@ function dotColumn(x, y, count, gap, col) {
 function squiggle(x, y, len, amp, col) {
   noFill();
   stroke(col);
-  strokeWeight(4);
+  strokeWeight(3);
 
   beginShape();
   for (var i = 0; i <= len; i += 5) {
