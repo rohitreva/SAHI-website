@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SAHI</title>
+  <meta charset="utf-8">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+
+  <script type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    
+<!-- connecting to the different webpages-->
+  <div class="tabs">
+    <!-- adding the SAHI logo to the webpage tab -->
+    <img class="tab-logo" src="logo.png" alt="SAHI">
+    <div class="tab-links">
+              <a href="team.html" class="active">Our Team</a>
+              <a href="research.html">Research</a>
+              <a href="heart.html">Artificial Heart</a>
+           
+    </div>
+  </div>
+<!-- to get the 3d model of the TAH -->
+  <model-viewer class="heart" src="heart.glb" alt="Total artificial heart"
+  camera-controls
+  auto-rotate auto-rotate-delay="0" rotation-per-second="20deg"
+  camera-orbit="35deg 72deg auto" field-of-view="10deg"
+  min-camera-orbit="auto 0deg auto" max-camera-orbit="auto 180deg auto"
+  disable-zoom
+  interaction-prompt="none"
+  shadow-intensity="1.1"
+shadow-softness="0.75" environment-image="legacy"
+exposure="1.0">
+</model-viewer>
+
+<!-- to add the animation of the SAHI acronym-->
+  <div class="name">
+    <div class="line"><span>S</span><i>ydney</i></div>
+    <div class="line"><span>A</span><i>rtificial</i></div>
+    <div class="line"><span>H</span><i>eart</i></div>
+    <div class="line"><span>I</span><i>nitiative.</i></div>
+  </div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>

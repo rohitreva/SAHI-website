@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Team — SAHI</title>
+  <meta charset="utf-8">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+<!-- this is to link the different webpages-->
+  <div class="tabs">
+    <a href="index.html"><img class="tab-logo" src="logo.png" alt="SAHI"></a>
+    <div class="tab-links">
+      <a href="team.html" class="active">Our Team</a>
+      <a href="research.html">Research</a>
+      <a href="heart.html">Artificial Heart</a>
+    </div>
+  </div>
+
+<!-- adding the team picture -->
+  <figure class="banner">
+    <img src="team.png" alt="The 2026 SAHI team">
+  </figure>
+<!-- text after the picture and adding the effect after scrolling down-->
+  <main class="page">
+    <p class="eyebrow reveal">Our Team</p>
+
+    <h1 class="statement reveal">
+      <em>25</em> Students.<br>
+      <em>1</em> Mission:<br>
+      To Build Sydney's First<br>
+      Artificial Heart.
+    </h1>
+  </main>
+
+  <script src="sketch.js"></script>
+
+  <script>
+   //controls when the text after the image appears
+    var revealItems = document.querySelectorAll(".reveal");
+
+    var watcher = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+          watcher.unobserve(entry.target);   
+        }
+      });
+    }, { threshold: 0.25 });
+
+    for (var i = 0; i < revealItems.length; i++) {
+      watcher.observe(revealItems[i]);
+    }
+  </script>
+
+</body>
+</html>
